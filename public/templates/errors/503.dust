@@ -1,0 +1,6 @@
+{>"layouts/master" /}
+
+{<body}
+    <h1>Teenus kättesaadamatu</h1>
+    <p>Teenus pole hetkel saadaval. Proovige natukese aja pärast uuesti.</p>
+{/body}

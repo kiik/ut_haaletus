@@ -1,0 +1,6 @@
+{>"layouts/master" /}
+
+{<body}
+    <h1>Lehekülge ei leitud</h1>
+    <p>Soovitud lehte aadressiga <code>"{url}"</code> ei leitud. </p>
+{/body}

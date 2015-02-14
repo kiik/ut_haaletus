@@ -1,0 +1,6 @@
+{>"layouts/master" /}
+
+{<body}
+    <h1>Serveri sisene viga</h1>
+    <p>Aadressil <code>{url}</code> ilmnes erind <code>{err}</code></p>
+{/body}
