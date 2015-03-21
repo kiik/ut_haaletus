@@ -1,0 +1,25 @@
+{>"layouts/master" /}
+
+{<breadcrumb}
+    {_SUPER_} {! FIXME: super is not working for some reason? !}
+    <li><a href="/">Kodu</a></li>
+    <li class="active">Tulemused</li>
+{/breadcrumb}
+
+{<body}
+        <img src="/img/placeholder.png" class="center-block" height="50" width="995">
+        <br>
+
+        <div class="navi col-md-3 pull-left">
+            <ul class="list-unstyled">
+                <li><a href="#">Jälgi hääletustulemusi reaalajas</a></li>
+                <li><a href="#">Häälte jagunemine kogu riigis</a></li>
+                <li><a href="#">Häälte jagunemine piirkondade lõikes</a></li>
+                <li><a href="#">Häälte jagunemine parteide lõikes</a></li>
+                <li><a href="#">Häälte jagunemine kandidaadi lõikes</a></li>
+            </ul>
+        </div>
+
+        <div class="col-xs-8 pull-right placeholder" style="height:400px"></div>
+{/body}
+

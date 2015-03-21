@@ -1,0 +1,18 @@
+{>"layouts/master" /}
+
+{<breadcrumb}
+    {_SUPER_} {! FIXME: super is not working for some reason? !}
+    <li><a href="/">Kodu</a></li>
+    <li class="active">Kandidaadid</li>
+{/breadcrumb}
+
+{<body}
+        <img src="/img/placeholder.png" class="center-block" height="50" width="995">
+        <br>
+
+        <div class="container">
+            <div class="col-xs-7 pull-left placeholder" style="height:400px">
+            </div>
+            <div class="col-xs-4 pull-right placeholder" style="height:400px"></div>
+        </div>
+{/body}

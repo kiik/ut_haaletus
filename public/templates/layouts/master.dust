@@ -43,8 +43,8 @@
       <div class="clearfix"></div>
 
       <ul class="navi">
-        <li><a href="#">Kandidaadid</a></li>
-        <li><a href="#">Tulemused</a></li>
+        <li><a href="/kandidaadid">Kandidaadid</a></li>
+        <li><a href="/tulemused">Tulemused</a></li>
         <li><a href="#">...</a></li>
       </ul>
 

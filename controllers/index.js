@@ -17,4 +17,11 @@ module.exports = function (router) {
         res.render('layouts/master');
     });
 
+    router.get('/kandidaadid', function (req, res) {
+            res.render('kandidaadid');
+        });
+
+    router.get('/tulemused', function (req, res) {
+                res.render('tulemused');
+            });
 };
