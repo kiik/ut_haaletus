@@ -1,0 +1,76 @@
+body {
+    font-weight: 200;
+    font-family: "Lato",sans-serif;
+    font-size: 16px;
+}
+
+
+.brand {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 35px;
+}
+.brand-header {
+    margin-top: 5px;
+    padding-top: 15px;
+    color: black;
+}
+
+.breadcrumb {
+    font-size: 10px;
+    background: none;
+    font-style: italic;
+    color: #AAA;
+
+    padding: 5px;
+    margin: 5px;
+}
+
+.placeholder {
+    background-image: url("/img/placeholder.png")
+}
+
+
+.navi {
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+    font-size: 14px;
+}
+.navi a {
+    color: black;
+}
+.navi > li {
+    float: left;
+    list-style: none;
+    font-weight: 600;
+}
+.navi a:hover {
+    color: darkblue;
+    cursor: pointer;
+    text-decoration: none;
+}
+.navi > li:nth-child(n+2) {
+    margin-left: 15px;
+}
+
+
+hr {
+    margin: 5px;
+}
+
+footer {
+    background-color: #F7F7F7;
+    padding-top: 30px;
+    border-top: 1px solid #EFEFEF;
+    margin-top: 50px;
+    bottom: 0px;
+    width: 100%;
+}
+footer h5 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.35;
+    margin: 0px 0px 12px;
+}

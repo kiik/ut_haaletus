@@ -13,4 +13,8 @@ module.exports = function (router) {
         res.render('index', model);
     });
 
+    router.get('/layout', function (req, res) {
+        res.render('layouts/master');
+    });
+
 };
