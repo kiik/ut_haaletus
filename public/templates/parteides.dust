@@ -3,7 +3,8 @@
 {<breadcrumb}
     {_SUPER_} {! FIXME: super is not working for some reason? !}
     <li><a href="/">Kodu</a></li>
-    <li class="active">Tulemused</li>
+    <li><a href="/tulemused">Tulemused</a></li>
+    <li class="active">Hääle jagunemine parteide lõikes</li>
 {/breadcrumb}
 
 {<body}

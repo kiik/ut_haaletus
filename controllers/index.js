@@ -18,10 +18,30 @@ module.exports = function (router) {
     });
 
     router.get('/kandidaadid', function (req, res) {
-            res.render('kandidaadid');
-        });
+        res.render('kandidaadid');
+    });
 
     router.get('/tulemused', function (req, res) {
-                res.render('tulemused');
-            });
+        res.render('tulemused');
+    });
+
+    router.get('/tulemused/reaalajas', function (req, res) {
+        res.render('reaalajas');
+    });
+
+    router.get('/tulemused/riigis', function (req, res) {
+        res.render('riigis');
+    });
+
+    router.get('/tulemused/piirkondades', function (req, res) {
+        res.render('piirkondades');
+    });
+
+    router.get('/tulemused/parteides', function (req, res) {
+        res.render('parteides');
+    });
+
+    router.get('/tulemused/kandidaadid', function (req, res) {
+        res.render('t_kandidaadid');
+    });
 };
