@@ -21,6 +21,12 @@
             </ul>
         </div>
 
-        <div class="col-xs-8 pull-right placeholder" style="height:400px"></div>
+        <div class="col-xs-7 pull-right">
+            <div class="chart">
+                <canvas id="piirkonnad" width="550" height="350"></canvas>
+            </div>
+        </div>
+        <script src="/js/piirkonnad.js"></script>
+
 {/body}
 
