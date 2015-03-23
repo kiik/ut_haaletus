@@ -11,7 +11,7 @@
 
 
     <!-- KANDIDAADID LEHT-->
-    <script type="text/javascript" src="/templates/kandidaadid.js"></script>
+    <script type="text/javascript" src="/js/kandidaadid.js"></script>
         <!-- DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
     <!-- jQuery -->

@@ -9,12 +9,12 @@
 {<body}
 
 	<script>
-		$(document).ready( 
+		$(document).ready(
 			function () {
 				buildTable();
 		    	$('#table_id').DataTable();
-			} 
-		);	
+			}
+		)
 	</script>
 
     <img src="/img/placeholder.png" class="center-block" height="50" width="995">
