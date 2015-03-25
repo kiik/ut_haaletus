@@ -19,6 +19,8 @@
     <!-- DataTables -->
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
 
+      <!-- STATISTIKA LEHT -->
+      <script src="/js/Chart.min.js"></script>
 
 
 
@@ -110,6 +112,5 @@
     </footer>
 
     <script src="/js/app.js"></script>
-    <script src="/js/Chart.min.js"></script>
   </body>
 </html>

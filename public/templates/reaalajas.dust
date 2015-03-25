@@ -21,6 +21,16 @@
             </ul>
         </div>
 
-        <div class="col-xs-8 pull-right placeholder" style="height:400px"></div>
+        <script src="/js/reaalajas.js"></script>
+        <div class = "col-xs-8 pull-right" height="400">
+            <script>
+                $(document).ready(
+                    window.onload = function() {
+                        buildTable();
+                        $('#table_id').DataTable();
+                    }
+                )
+	        </script>
+        </div>
 {/body}
 
