@@ -45,5 +45,5 @@ function createTable(){
 }
 
 function personHtmlTr(person){
-    return "<tr><td>"+person[0]+"</td><td>"+person[1]+"</td><td>"+person[2]+"</td><td>"+person[3]+"</td></tr>";
+    return "<tr><td>"+person[0]+"</td><td>"+person[1]+"</td><td>"+person[2]+"</td><td>"+person[3]+"</td><td>"+person[4]+"</td></tr>";
 }
