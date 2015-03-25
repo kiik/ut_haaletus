@@ -25,10 +25,6 @@ module.exports = function (router) {
         res.render('tulemused');
     });
 
-    router.get('/tulemused/reaalajas', function (req, res) {
-        res.render('reaalajas');
-    });
-
     router.get('/tulemused/riigis', function (req, res) {
         res.render('riigis');
     });
