@@ -30,7 +30,7 @@ var checkAuth = function(cert, callback) {
 
 app = module.exports = express();
 //app.use(clientCertificateAuth(checkAuth));
-//app.use(kraken(options));
+app.use(kraken(options));
 app.on('start', function () {
     console.log('Application ready to serve requests.');
     console.log('Environment: %s', app.kraken.get('env:env'));
