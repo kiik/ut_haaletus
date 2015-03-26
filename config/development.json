@@ -51,5 +51,11 @@
                 ]
             }
         }
+    },
+    "sequelize": {
+        "uri": "localhost",
+        "database": "haaletus_dev",
+        "user": "meelik",
+        "password": "kileem"
     }
 }
