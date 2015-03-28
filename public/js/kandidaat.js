@@ -1,24 +1,23 @@
-'use strict';
 
-$(function() {
-    var kandidaatdata = {
-            labels:["Sheldon Cooper", "Penny", "Leonard Hofstadter", "Howard Wolowitz", "Raj Koothrappali"],
-            datasets: [
-                {
-                    fillColor: "rgba(151,187,205,0.5)",
-                    strokeColor: "rgba(151,187,205,0.8)",
-                    highlightFill: "rgba(151,187,205,0.75)",
-                    highlightStroke: "rgba(151,187,205,1)",
-                    data: [45, 1783, 1034, 723, 1434]
-                }
-            ]
-        };
 
-    var options= {
-        scaleBeginAtZero : true
-    };
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return decodeURI(pair[1]);}
+       }
+       return(false);
+}
 
-    var ctx = $("#kandidaadid").get(0).getContext("2d");
-    var kandidaadid = new Chart(ctx).Bar(kandidaatdata, options);
-});
 
+
+$(document).ready(
+	function(){
+		document.getElementById("kandidaadi_number").innerHTML += getQueryVariable("kandidaadi_number");
+		document.getElementById("eesnimi").innerHTML += getQueryVariable("eesnimi");
+		document.getElementById("perenimi").innerHTML += getQueryVariable("perenimi");
+		document.getElementById("erakond").innerHTML += getQueryVariable("erakond");
+	}
+);

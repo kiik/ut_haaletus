@@ -1,3 +1,13 @@
+
+
+/*
+person on rida andmebaasist.
+nt. midagi taolist.
+
+SELECT valimine.kandidaadi_number, eesnimi, perenimi, erakond.nimi
+FROM kandidaat INNER JOIN valimine ON valimine.kandidaat_id = kandidaat.id
+*/
+
 var person1 = ["101","Ene","Ergma", "Erakond Isamaa ja Res Publica Liit"];
 var person2 = ["102","Tõnu","Lehtsaar", "Erakond Isamaa ja Res Publica Liit"];
 
@@ -10,23 +20,24 @@ var person5 = ["421","Taavi", "Rõivas", "Eesti Reformierakond"];
 var person6 = ["501","Sven", "Mikser","Sotsisaaldemokraatlik Erakond"];
 var person7 = ["502","Indrek", "Saar","Sotsisaaldemokraatlik Erakond"];
 
-var candidates = [person1, person2, person3,person4,person5, person6, person7];
+/*
+see on siis list, mida on saadud andmbaasist. vastavalt eelnevale l6igule
+*/
 
+var candidates = [person1, person2, person3,person4,person5, person6, person7];
 
 function buildTable(){
     document.getElementById("table_comes_here").innerHTML = ""+createTable();
 }
 
-
 function createBody(){
-    var start ='<tbody>'
-        var end = '</tbody>'
-        for (i = 0; i < candidates.length; i++) {
-            console.log("here");
-            start = start + personHtmlTr(candidates[i]);
-        }
-    start += end;
-    return start;
+    var body ='<tbody>'
+	for (i = 0; i < candidates.length; i++) {
+		console.log("here");
+  		body = body + personHtmlTr(candidates[i],i);
+  	}
+    body += '</tbody>';
+    return body;
 }
 function createTable(){
     var start = ' ' +
@@ -39,10 +50,47 @@ function createTable(){
         '<th>Erakond</th>'+
         '</tr>'+
         '</thead>';
-    var end = '</table>';
-    return start + createBody() + end;
+    return start + createBody() + '</table>';
 }
 
-function personHtmlTr(person){
-    return "<tr><td>"+person[0]+"</td><td>"+person[1]+"</td><td>"+person[2]+"</td><td>"+person[3]+"</td></tr>";
+function personHtmlTr(person,id){
+	var tr = "<tr id='"+id+"' onClick='lookCandidate("+id+")'>";
+	var i;
+	for(i in person){
+		tr +="<td>" + person[i] + "</td>";
+	}
+	return tr += "</tr>";
 }
+
+$(document).ready(function(){
+		buildTable();
+		$('#table_id').DataTable();
+
+	}
+);
+
+/*
+kui kandidaadi rea peale vajutades, suunab edasi selle kandidaadi lehele
+
+note: oleks parem, kui siin saaks mitte indexite j2rgi valida v22rtuseid, vaid oleks, et peron oleks object.
+*/
+function lookCandidate(tr_id){
+	var columns = ["kandidaadi_number", "eesnimi", "perenimi", "erakond"];
+
+	var tr = document.getElementById(tr_id);
+	var tds = tr.getElementsByTagName('td');
+
+	var url = "kandidaat?";
+	for(i in tds){
+		if(i == 0){
+			url += columns[i] +"="+tds[i].innerHTML;
+		}
+		else{
+			url += "&"+columns[i] +"="+tds[i].innerHTML;
+		}
+	}
+
+	window.location.href = url;
+}
+
+
