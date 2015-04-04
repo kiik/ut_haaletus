@@ -68,5 +68,6 @@
             }
         }
 
-    }
+    },
+    "dbUrl": "postgres://meelik:kileem@localhost:5432/haaletus_dev"
 }
