@@ -1,7 +1,6 @@
 'use strict';
 
 var express = require('express');
-var clientCertificateAuth = require('client-certificate-auth');
 var kraken = require('kraken-js');
 
 var options, app;
@@ -21,41 +20,12 @@ options = {
 };
 
 
-var checkAuth = function(cert, callback) {
-    console.log("ID-AUTH");
-    console.log(cert);
-    callback(true);
-};
-
-
 app = module.exports = express();
-//app.use(clientCertificateAuth(checkAuth));
 app.use(kraken(options));
 app.on('start', function () {
     console.log('Application ready to serve requests.');
     console.log('Environment: %s', app.kraken.get('env:env'));
 });
 
-app.get("/id-auth",clientCertificateAuth(checkAuth),
-    function(req, res) {
-        console.log("/id-auth");
 
-        if(req.client.authorized){
 
-            var subject = req.connection
-                .getPeerCertificate().subject;
-
-            res.send({ title:        'Authorized!',
-                        user:         subject.CN,
-                        email:        subject.emailAddress,
-                        organization: subject.O,
-                        unit:         subject.OU,
-                        location:     subject.L,
-                        state:        subject.ST,
-                        country:      subject.C
-                    });
-
-        } else {
-            res.send('unauthorized');
-        }
-    });
