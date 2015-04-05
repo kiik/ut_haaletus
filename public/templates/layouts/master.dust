@@ -68,9 +68,17 @@
 
       <div class="navi pull-right">
         <!--Button trigger modal -->
+          {?user}
+            {#user}
+            <span>{username}</span>
+            <span>&nbsp;|&nbsp;</span>
+            <a href="/auth/logout">Välju</a>
+            {/user}
+          {:else}
           <button type="button" class="btn btn-xs" data-toggle="modal" data-target="#loginButton">
               Sisene
           </button>
+          {/user}
       </div>
 
         <!-- Modal -->
@@ -86,6 +94,8 @@
                         <div class="container">
                             <br>
                             <button type="button" class="btn btn-primary">Facebook</button>
+                            <a href="/auth/login?type=id" class="btn btn-primary">ID Sertifikaat</a>
+
                         </div>
                     </div>
                     <div class="modal-footer">

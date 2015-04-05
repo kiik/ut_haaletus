@@ -1,0 +1,15 @@
+{>"layouts/master" /}
+
+{<breadcrumb}
+    {_SUPER_} {! FIXME: super is not working for some reason? !}
+    <li><a href="/">Kodu</a></li>
+    <li class="active">Profiil</li>
+{/breadcrumb}
+
+{<body}
+<div class="container">
+  <h2>Sinu info</h2>
+  <p>SSN: {ssn}</p>
+  <p>Nimie: {fname.toUpperCase} {lname.toUpperCase}</p>
+</div>
+{/body}
