@@ -11,6 +11,8 @@ module.exports = function(db, dialect) {
         classMethods: {
             associate: function(models) {
                 Organization.hasOne(models.Town);
+                models.User.belongsTo(Organization);
+                //Organization.hasMany(models.User);
             }
         }
     });

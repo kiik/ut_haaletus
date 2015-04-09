@@ -10,8 +10,7 @@ module.exports = function(db, dialect) {
     }, {
         classMethods: {
             associate: function(models) {
-                models.User.hasMany(Application);
-                models.Organization.hasMany(Application);
+                models.User.hasOne(Application);
             }
         }
     });
