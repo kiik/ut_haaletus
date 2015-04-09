@@ -1,12 +1,17 @@
-{>"layouts/master" /}
-
-{<breadcrumb}
-    {_SUPER_} {! FIXME: super is not working for some reason? !}
-    <li><a href="/">Kodu</a></li>
-    <li class="active"></li>
-{/breadcrumb}
-
-{<body}
-        <h1>2015 Hääletus</h1>
-
-{/body}
+<div class="index-splash">
+  <h1 class="col-xs-offset-1">2015 Hääletus</h1>
+  <div class="col-xs-offset-2">
+    <div class="btn-toolbar">
+      <a href="#teave" class="col-xs-2 btn btn-lg btn-primary">Üldinfo</a>
+      <a href="#kandidaadid"class="col-xs-2 btn btn-lg btn-primary">Kandidaadid</a>
+      <a href="#statistika" class="btn btn-lg btn-primary">Tulemused Reaalajas</a>
+    </div>
+  </div>
+  <div class="col-xs-offset-1 row-offset-4">
+    <ul class="index-info">
+      <li>07.04.2015 - Vabariigi Valimiskomisjoni liikmeks asus Nele Parrest</li>
+      <li>27.03.2015 - Vabariigi Valimiskomisjon määras Riigikogu asendusliikmed</li>
+      <li>23.03.2015 - Valimiskomisjon registreeris Riigikogu uue koosseisu</li>
+    </ul>
+  </div>
+</div>

@@ -1,14 +1,37 @@
 body {
     font-weight: 200;
-    font-family: "Lato",sans-serif;
+    font-family: "Open sans";
     font-size: 16px;
 }
 
 
+hr {
+    margin: 5px;
+}
+
+footer {
+    background-color: #F7F7F7;
+    padding-top: 30px;
+    border-top: 1px solid #EFEFEF;
+    margin-top: 50px;
+    bottom: 0px;
+    width: 100%;
+}
+footer h5 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.35;
+    margin: 0px 0px 12px;
+}
+
+
+.row-offset-4 { margin-top: 60px }
+.row-offset-1 { margin-top: 15px }
+
 .brand {
     margin-top: 5px;
     margin-bottom: 20px;
-    width: 150px;
+    width: 70px;
     height: 35px;
 }
 .brand-header {
@@ -56,21 +79,54 @@ body {
 }
 
 
-hr {
-    margin: 5px;
+.index-splash {
+    height: 450px;
+    display: block;
+    position: relative;
+}
+.index-splash > h1 {
+    margin-top: 25px;
+    font-size: 80px;
+}
+.index-splash:before {
+    top: -20px;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;;
+    z-index: -1;
+
+    content: "";
+    background: url(http://www.restoransenso.ee/UserFiles/senso/Foton%C3%A4itus/1.jpg) no-repeat center center;
+    opacity: 0.6;
+    border-radius: 10px;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.index-info {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+}
+.index-info:before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 110%;
+    width: 100%;
+    z-index: -1;
+
+    content: "";
+    background: white;
+    opacity: 0.7;
+    border-radius: 3px;
 }
 
-footer {
-    background-color: #F7F7F7;
-    padding-top: 30px;
-    border-top: 1px solid #EFEFEF;
-    margin-top: 50px;
-    bottom: 0px;
+
+.chart {
+    height: 400px;;
     width: 100%;
-}
-footer h5 {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.35;
-    margin: 0px 0px 12px;
 }

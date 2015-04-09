@@ -2,13 +2,11 @@
 
 var http = require('http');
 var https = require('https');
+var fs = require('fs');
+var security = require('./security');
 
 var app = require('./index');
-var tls_setup = require('./tls_setup');
-
-var server, tls_server;
-
-var fs = require('fs');
+app.use(security.certAuth);
 
 var opts = {
     key : fs.readFileSync('certs/server.key'),
@@ -19,16 +17,17 @@ var opts = {
     rejectUnauthorized: false,
 }
 
-/*
- * Create and start HTTP server.
- */
+var server, tls_server;
+
 server = https.createServer(opts, app);
 server.listen(process.env.PORT || 8080);
 server.on('listening', function () {
-    console.log('Server listening on http://localhost:%d', this.address().port);
+    console.log('Server listening on https://localhost:%d', this.address().port);
 });
 
+
 opts.requestCert = true;
+opts.rejectUnauthorized = true;
 
 tls_server = https.createServer(opts, app);
 tls_server.listen(process.env.PORT || 8022);
