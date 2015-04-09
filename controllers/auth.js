@@ -4,28 +4,22 @@
 var url = require('url');
 var passport = require('passport');
 
+var requireAuth = require('../security').requireAuth;
 var User = require('../models').User;
 
 
 module.exports = function (router) {
-    router.get('/login', function(req, res) {
-        var query;
-        if(req.query.ref) {
-            var i = req.url.indexOf('?');
-            query = req.url.substr(i);
-        } else {
-            query = "?ref="+url.parse(req.header("Referer")).pathname;
-        }
+    router.get('/login', requireAuth);
 
-        res.redirect("https://localhost:8022/auth/"+req.query.type+query);
-    });
-
-    router.get('/id', passport.authenticate('client-cert'), function (req, res, next) {
+    router.get('/id', function (req, res, next) {
+        //FIXME: Check what if auth failed
         res.redirect(req.query.ref);
     });
 
     router.get('/logout', function (req, res, next) {
-        req.logout();
-        res.redirect('https://localhost:8080');
+        var URL = 'https://';
+        URL += req.hostname;
+        URL += ':8080';
+        res.redirect(URL);
     });
 }

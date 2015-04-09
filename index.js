@@ -2,8 +2,7 @@
 
 var express = require('express');
 var kraken = require('kraken-js');
-var dust = require('adaro');
-var passport = require('passport');
+//var passport = require('passport');
 
 var options, app;
 
@@ -23,7 +22,7 @@ options = {
 
 
 app = module.exports = express();
-app.use(passport.initialize());
+//app.use(passport.initialize());
 app.use(kraken(options));
 app.on('start', function () {
     console.log('Application ready to serve requests.');
