@@ -71,7 +71,6 @@ uthControllers.controller('resultsCtrl',
             isAnimate: true,
             yAxisTickFormat: 's',
             xAxisMaxTicks: 7,
-            yAxisTickFormat: 's',
             waitForHeightAndWidth: false
         };
 
@@ -115,7 +114,6 @@ uthControllers.controller('statisticsCtrl',
             isAnimate: true,
             yAxisTickFormat: 's',
             xAxisMaxTicks: 7,
-            yAxisTickFormat: 's',
             waitForHeightAndWidth: false
         };
 
