@@ -1,0 +1,9 @@
+<div>
+    {?user}
+    {#user}
+    <p>Kandideerimine:</p>
+    {/user}
+    {:else}
+    <p>Kandideerimiseks palun logige sisse</p>
+    {/user}
+</div>

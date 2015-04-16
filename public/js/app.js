@@ -34,6 +34,10 @@ app.config(['$routeProvider',
                 templateUrl: '/templates/tulemused/index.html',
                 controller: 'resultsCtrl'
             }).
+            when('/kandideerimine', {
+                templateUrl: '/kandideerimine',
+                controller: 'applicationCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

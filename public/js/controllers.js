@@ -154,3 +154,10 @@ uthControllers.controller('statisticsCtrl',
         }
     }
 ]);
+
+uthControllers.controller('applicationCtrl',
+    ['$scope',
+    function ($scope) {
+        console.log("applicationCtrl()");
+    }
+]);
