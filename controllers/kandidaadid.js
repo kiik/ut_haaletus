@@ -32,11 +32,11 @@ module.exports = function(router) {
         });
     });
 
-
     router.get('/details', function(req, res) {
         db.User.find({where:{id:req.query.id}})
             .then(function(data) {
                 res.json({
+                    id: data.id,
                     first_name: data.first_name,
                     last_name: data.last_name,
                     email: "<placeholder>",
@@ -44,5 +44,10 @@ module.exports = function(router) {
                     isVoteable: res.locals.user ? true : false,
                 });
             });
+    });
+
+    router.get('/vote', function(req, res) {
+        console.log(req.query.candidate_id);
+        res.send("Test");
     });
 }

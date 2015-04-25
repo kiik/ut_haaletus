@@ -40,13 +40,23 @@ uthControllers.controller('candidateListCtrl',
 
 
 uthControllers.controller('candidateCtrl',
-    ['$scope', '$routeParams', 'Candidate',
-    function ($scope, $routeParams, Candidate) {
+    ['$scope', '$routeParams', 'Candidate', '$http',
+    function ($scope, $routeParams, Candidate, $http) {
         Candidate.get($routeParams, function(data) {
             console.log(data);
             $scope.c = data;
         });
+        $scope.makeVote = function(id) {
+            $http.get('/kandidaadid/vote', {params: {candidate_id:id}}).success(function() {
+                console.log("Töötab");
+            }).
+            error(function() {
+                console.log("Valesti läks.");
+            });
+        }
+
     }
+
 ]);
 
 
