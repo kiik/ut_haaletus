@@ -27,8 +27,14 @@
   </div>
 
   <div class="btn-toolbar col-xs-5 text-center row-offset-4">
+
     <div class="col-xs-12 center-block" ng-if="c.isVoteable">
-      <button id= "vali_button" class="btn btn-primary btn-lg" ng-click="makeVote(c.id);">Vali</button>
+      <div ng-if="c.isVoted">
+        <button class="btn btn-primary btn-lg" disabled>Sa oled juba valinud kandidaadi</button>
+      </div>
+      <div ng-if="!c.isVoted">
+        <button id= "vali_button" class="btn btn-primary btn-lg" ng-click="makeVote(c.id);">Vali</button>
+      </div>
 
     </div>
     <div class="col-xs-12 center-block" ng-if="!c.isVoteable">

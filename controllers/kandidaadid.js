@@ -35,20 +35,22 @@ module.exports = function(router) {
     router.get('/details', function(req, res) {
         db.User.find({where:{id:req.query.id}})
             .then(function(data) {
-                res.json({
-                    id: data.id,
-                    first_name: data.first_name,
-                    last_name: data.last_name,
-                    email: "<placeholder>",
-                    image: f.image.avatar(),
-                    isVoteable: res.locals.user ? true : false,
+                db.Vote.find({where:{UserId:1}})
+                    .then(function(data2){
+                        res.json({
+                            id: data.id,
+                            first_name: data.first_name,
+                            last_name: data.last_name,
+                            email: "<placeholder>",
+                            image: f.image.avatar(),
+                            isVoteable: res.locals.user ? true : false,
+                            isVoted: (data2 != null )? true : false,
+                        });
                 });
             });
     });
 
     router.get('/vote', function(req, res) {
-        console.log(req.query.candidate_id);
-        console.log(req.query.user_id);
 
         db.Application.find({where:{UserId: req.query.candidate_id}}).then(function(data) {
             db.Vote.create({ UserId: req.query.user_id, ApplicationId: data.id }).then(function() {
