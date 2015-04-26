@@ -48,6 +48,13 @@ module.exports = function(router) {
 
     router.get('/vote', function(req, res) {
         console.log(req.query.candidate_id);
-        res.send("Test");
+        console.log(req.query.user_id);
+
+        db.Application.find({where:{UserId: req.query.candidate_id}}).then(function(data) {
+            db.Vote.create({ UserId: req.query.user_id, ApplicationId: data.id }).then(function() {
+                        console.log('[DB] Row added to Vote');
+                    });
+        });
+
     });
 }

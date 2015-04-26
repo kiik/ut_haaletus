@@ -47,7 +47,7 @@ uthControllers.controller('candidateCtrl',
             $scope.c = data;
         });
         $scope.makeVote = function(id) {
-            $http.get('/kandidaadid/vote', {params: {candidate_id:id}}).success(function() {
+            $http.get('/kandidaadid/vote', {params: {candidate_id:id, user_id:1}}).success(function() {
                 console.log("Töötab");
             }).
             error(function() {
