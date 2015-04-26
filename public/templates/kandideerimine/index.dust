@@ -4,6 +4,25 @@
     <div class ="row-fluid">
         <legend>Kandideerimine</legend>
     </div>
+    <form>
+        Eesnimi:<br>
+        <input type="text" name="firstname">
+        <br>
+        <br>
+        Perenimi:<br>
+        <input type="text" name="lastname">
+        <br>
+        <br>
+        E-mail:<br>
+        <input type="email" name="email">
+        <br>
+        <br>
+        Organisatsioon:<br>
+        <input type="text" name="organization">
+        <br>
+        <br>
+        <input type="submit" value="Kandideeri">
+    </form>
     {/user}
     {:else}
     <p>Kandideerimiseks palun logige sisse</p>
