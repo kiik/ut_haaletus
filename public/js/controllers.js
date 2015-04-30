@@ -17,11 +17,26 @@ uthControllers.controller('indexCtrl',
     }
 ]);
 
+uthControllers.controller('authCtrl',
+    ['$scope', '$location',
+    function ($scope, $location) {
+        $scope.login = function(url) {
+            console.log("login");
+            $location.path("/teave");
+        }
+
+        $scope.logout = function() {
+
+        }
+    }
+]);
+
 
 uthControllers.controller('candidateListCtrl',
     ['$scope', 'ngTableParams', 'Candidate',
     function ($scope, ngTableParams, Candidate) {
         $scope.test = "test";
+
         $scope.tableParams = new ngTableParams({
             page: 1,
             count: 10,
@@ -29,9 +44,8 @@ uthControllers.controller('candidateListCtrl',
             total: 0,
             getData: function($defer, params) {
                Candidate.list(params.url(), function(data) {
-                    params.total(1000);
-                    $defer.resolve(data);
-                    console.log(data);
+                    params.total(data.page_count);
+                    $defer.resolve(data.candidates);
                });
             }
         });
