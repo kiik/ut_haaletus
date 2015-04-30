@@ -69,5 +69,5 @@
         }
 
     },
-    "dbUrl": "postgres://meelik:kileem@localhost:5432/haaletus_dev"
+    "dbUrl": "postgres://kasutaja:123456@localhost:5432/uthaal"
 }

@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div class="col-xs-6">
+    <table ng-table="tableParams" template-pagination="custom/pager" class="table table-condensed table-hover">
+      <thead>
+        <tr>
+          <td>Organisatsioon</td>
+          <td>Hääled</td>
+          <td>Top Kandidaat</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="c in $data">
+          <td data-title="Organisatsioon" sortable="Organisatsioon">{{c.org}}</td>
+          <td>{{c.id}}</td>
+          <td>{{c.name}}</td>
+          <td class="col-xs-3">
+            <a href="#kandidaadid/detailid/{{c.id}}" class="btn btn-xs btn-primary">
+              Ava Detailid
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-xs-6">
+    <div ac-chart="chart1Type" ac-data="data" ac-config="config1" id='chart1' class='chart center-block'></div>
+  </div>
+</div>

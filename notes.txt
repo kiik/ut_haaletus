@@ -1,0 +1,20 @@
+Tehtud:
+Autoriseerimine
+AJAX viited
+AJAX kasutamine
+Autentimine, Andmebaasi andmete esitamine, Andmete salvestamine andmebaasi
+Andmebaasi andmete esitamine
+
+
+Vaja teha:
+Päringute arvu ja mahu piiramine
+Meldimine
+Agregeeritud andmete esitamine
+Andmete Surumine
+
+*Võrguühenduseta kasutatav vähemalt osa funktsionaalsust
+
+
+Hiljem:
+Automaattestid (tähtajaline, 6. etapp)
+Jõudlustestid (tähtajaline, 6. etapp)

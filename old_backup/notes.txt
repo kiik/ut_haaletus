@@ -1,0 +1,29 @@
+    <!-- DataTables CSS
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
+    <script src="/js/Chart.min.js"></script>-->
+
+
+        <script>
+          var h = Math.floor(Math.random()*200);
+              m = Math.floor(Math.random()*60);
+              s = Math.floor(Math.random()*60);
+
+          function timer() {
+            s--;
+            if(s<=0) {
+              m--;
+              s = 60;
+            }
+
+            if(m<=0) {
+              h--;
+              m = 60;
+            }
+
+            $("#timer").html([h, m, s].join(":"));
+            setTimeout(timer, 1000);
+          } timer();
+
+        </script>

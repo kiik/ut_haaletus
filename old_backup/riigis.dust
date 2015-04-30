@@ -1,0 +1,30 @@
+{>"layouts/master" /}
+
+{<breadcrumb}
+    {_SUPER_} {! FIXME: super is not working for some reason? !}
+    <li><a href="/">Kodu</a></li>
+    <li><a href="/tulemused">Tulemused</a></li>
+    <li class="active">Hääle jagunemine kogu riigis</li>
+{/breadcrumb}
+
+{<body}
+        <img src="/img/placeholder.png" class="center-block" height="50" width="995">
+        <br>
+
+        <div class="navi col-md-3 pull-left">
+            <ul class="list-unstyled">
+                <li><a href="/tulemused/riigis">Häälte jagunemine kogu riigis</a></li>
+                <li><a href="/tulemused/piirkondades">Häälte jagunemine piirkondade lõikes</a></li>
+                <li><a href="/tulemused/parteides">Häälte jagunemine parteide lõikes</a></li>
+                <li><a href="/tulemused/kandidaadid">Häälte jagunemine kandidaadi lõikes</a></li>
+            </ul>
+        </div>
+
+    <div class="col-xs-7 pull-right">
+        <div class="chart">
+            <canvas id="riigis" width="550" height="350"></canvas>
+        </div>
+    </div>
+    <script src="/js/riigis.js"></script>
+{/body}
+
