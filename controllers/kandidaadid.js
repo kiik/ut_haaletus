@@ -5,10 +5,10 @@ var f = require("faker");
 var db = require("../models");
 
 module.exports = function(router) {
-
     router.get('/list', function(req, res) {
         db.User.findAll({
-            limit:req.query.count,
+            limit: req.query.count,
+            offset: req.query.page * req.query.count,
             include: [
                 {
                     model: db.Application,
@@ -22,13 +22,14 @@ module.exports = function(router) {
         }).then(function(users) {
             var data = [];
             var o;
+
             for(var i=0; i < users.length; i++) {
                 o = users[i];
-                console.log(o.getOrganization());
-                data.push({ name: o.name, id: o.id, org: o.Organization.name });
-            }
-            res.json(data);
 
+                data.push( { name: o.name, id: o.id, org: o.Organization.name } );
+            }
+
+            res.json({ candidates: data, page_count: 30 });
         });
     });
 
