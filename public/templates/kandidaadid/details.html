@@ -30,7 +30,12 @@
 
     <div class="col-xs-12 center-block" ng-if="c.isVoteable">
       <div ng-if="c.isVoted">
-        <button class="btn btn-primary btn-lg" disabled>Sa oled juba valinud kandidaadi</button>
+        <div ng-if="c.isThisCandidate">
+          <button class="btn btn-danger btn-lg" ng-click="deleteVote(c.id);">Kustuta hääl</button>
+        </div>
+        <div ng-if="!c.isThisCandidate">
+          <button class="btn btn-primary btn-lg" disabled>Sa oled juba valinud kandidaadi</button>
+        </div>
       </div>
       <div ng-if="!c.isVoted">
         <button id= "vali_button" class="btn btn-primary btn-lg" ng-click="makeVote(c.id);">Vali</button>

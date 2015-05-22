@@ -37,7 +37,8 @@ module.exports = function(router) {
         db.User.find({where:{id:req.query.id}})
             .then(function(data) {
                 db.User.find({where: {ssn: res.locals.user.ssn}}).then(function(data2) {
-                    db.Vote.find({where: {UserId: data2.id}}).then(function(data3){
+                    db.Application.find({where:{UserId: data.id}}).then(function(data3) {
+                        db.Vote.find({where: {UserId: data2.id}}).then(function(data4){
                             res.json({
                                 id: data.id,
                                 first_name: data.first_name,
@@ -45,8 +46,10 @@ module.exports = function(router) {
                                 email: "<placeholder>",
                                 image: f.image.avatar(),
                                 isVoteable: res.locals.user ? true : false,
-                                isVoted: (data3 != null )? true : false,
+                                isVoted: (data4 != null )? true : false,
+                                isThisCandidate: (data4 != null)? (data4.ApplicationId == data3.id) : false,
                             });
+                        });
                     });
                 });
             });
@@ -61,5 +64,13 @@ module.exports = function(router) {
             });
         });
 
+    });
+
+    router.get('/delete', function(req,res) {
+        db.User.find({where: {ssn: res.locals.user.ssn}}).then(function(data) {
+            db.Vote.destroy({where:{UserId:data.id}}).then(function() {
+                console.log('[DB] Row deleted from Vote')
+            });
+        });
     });
 }

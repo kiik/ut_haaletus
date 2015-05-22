@@ -68,6 +68,14 @@ uthControllers.controller('candidateCtrl',
                 console.log("Valesti läks.");
             });
         }
+        $scope.deleteVote = function(id) {
+            $http.get('/kandidaadid/delete').success(function() {
+                console.log("Töötab");
+            }).
+            error(function() {
+                console.log("Valesti läks.")
+            });
+        }
 
     }
 
