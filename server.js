@@ -9,8 +9,8 @@ var app = require('./index');
 app.use(security.certAuth);
 
 var opts = {
-    key : fs.readFileSync('certs/server.key'),
-    cert : fs.readFileSync('certs/server.crt'),
+    key : fs.readFileSync('certs/ca.key'),
+    cert : fs.readFileSync('certs/ca.crt'),
     ca : fs.readFileSync('certs/ca.crt'),
     passphrase : "password",
     requestCert : false,

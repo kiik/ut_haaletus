@@ -10,7 +10,7 @@
 module.exports = function(db, dialect) {
     var User = db.define('User', {
           ssn: {
-              type: dialect.BIGINT,
+              type: dialect.STRING,
               unique: true,
               allowNull: false
           },

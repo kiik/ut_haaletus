@@ -36,27 +36,29 @@ module.exports = function(router) {
     router.get('/details', function(req, res) {
         db.User.find({where:{id:req.query.id}})
             .then(function(data) {
-                db.Vote.find({where:{UserId:1}})
-                    .then(function(data2){
-                        res.json({
-                            id: data.id,
-                            first_name: data.first_name,
-                            last_name: data.last_name,
-                            email: "<placeholder>",
-                            image: f.image.avatar(),
-                            isVoteable: res.locals.user ? true : false,
-                            isVoted: (data2 != null )? true : false,
-                        });
+                db.User.find({where: {ssn: res.locals.user.ssn}}).then(function(data2) {
+                    db.Vote.find({where: {UserId: data2.id}}).then(function(data3){
+                            res.json({
+                                id: data.id,
+                                first_name: data.first_name,
+                                last_name: data.last_name,
+                                email: "<placeholder>",
+                                image: f.image.avatar(),
+                                isVoteable: res.locals.user ? true : false,
+                                isVoted: (data3 != null )? true : false,
+                            });
+                    });
                 });
             });
     });
 
     router.get('/vote', function(req, res) {
-
         db.Application.find({where:{UserId: req.query.candidate_id}}).then(function(data) {
-            db.Vote.create({ UserId: req.query.user_id, ApplicationId: data.id }).then(function() {
-                        console.log('[DB] Row added to Vote');
-                    });
+            db.User.find({where: {ssn: res.locals.user.ssn}}).then(function(data2) {
+                db.Vote.create({ UserId: data2.id, ApplicationId: data.id }).then(function() {
+                            console.log('[DB] Row added to Vote');
+                        });
+            });
         });
 
     });

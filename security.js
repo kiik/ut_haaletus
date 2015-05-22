@@ -9,7 +9,8 @@ var User = require('./models').User;
 
 function checkAuth(res, cert, callback) {
     res.locals.user = {
-        username: cert.subject.CN
+        username: cert.subject.CN,
+        ssn: cert.serialNumber
     };
     return callback(true);
 }
