@@ -2,6 +2,7 @@
     <legend>Sinu info</legend>
 </div>
 
+
 <div>
     <p>Eesnimi: {{ data.first }}</p>
     <p>Perenimi: {{ data.last }}</p>
@@ -9,17 +10,28 @@
 </div>
 
 <div ng-if="data.hasVoted">
-    <p>Sa oled h‰‰letanud.</p>
+    Sa oled h√§√§letanud.
+    <a href="#kandidaadid/detailid/{{data.id}}" class="btn btn-xs btn-primary">
+        Vaata
+    </a>
 </div>
 
 <div ng-if="!data.hasVoted">
-    <p>Sa ei ole veel h‰‰letanud. Soovid h‰‰letada?</p>
+    Sa ei ole veel h√§√§letanud.
+    <a href="#kandidaadid" class="btn btn-xs btn-primary">
+        Soovid h√§√§letada?
+    </a>
 </div>
 
+<br>
+
 <div ng-if="data.isCandidate">
-    <p>Sa oled kandidaat.</p>
+    Sa oled kandidaat.
 </div>
 
 <div ng-if="!data.isCandidate">
-    <p>Sa ei ole kandidaat. Soovid kandideerida?</p>
+    Sa ei ole kandidaat.
+    <a href="#kandideerimine" class="btn btn-xs btn-primary">
+        Soovid kandideerida?
+    </a>
 </div>
