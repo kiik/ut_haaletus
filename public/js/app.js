@@ -38,6 +38,10 @@ app.config(['$routeProvider',
                 templateUrl: '/kandideerimine',
                 controller: 'applicationCtrl'
             }).
+            when('/profile', {
+                templateUrl: '/templates/profile/index.html',
+                controller: 'profileCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });

@@ -57,7 +57,6 @@ uthControllers.controller('candidateCtrl',
     ['$scope', '$routeParams', 'Candidate', '$http',
     function ($scope, $routeParams, Candidate, $http) {
         Candidate.get($routeParams, function(data) {
-            console.log(data);
             $scope.c = data;
         });
         $scope.makeVote = function(id) {
@@ -68,7 +67,7 @@ uthControllers.controller('candidateCtrl',
                 console.log("Valesti läks.");
             });
         }
-        $scope.deleteVote = function(id) {
+        $scope.deleteVote = function() {
             $http.get('/kandidaadid/delete').success(function() {
                 console.log("Töötab");
             }).
@@ -191,5 +190,19 @@ uthControllers.controller('applicationCtrl',
     ['$scope',
     function ($scope) {
         console.log("applicationCtrl()");
+    }
+]);
+
+uthControllers.controller('profileCtrl',
+    ['$scope', '$http',
+    function($scope, $http) {
+        $http.get('/profile/data').success(function (response) {
+            console.log('Töötab');
+            $scope.data = response;
+        }).
+        error(function() {
+            console.log('Ei tööta');
+            $scope.data = {first: "none", last: "none"};
+        });
     }
 ]);

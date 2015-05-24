@@ -68,7 +68,7 @@
       <div class="navi pull-right">
           {?user}
             {#user}
-            <span>{username}</span>
+            <span><a href="#profile">{username}</a></span>
             <span>&nbsp;|&nbsp;</span>
             <a href="/auth/logout">Välju</a>
             {/user}

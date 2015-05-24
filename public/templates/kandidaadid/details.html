@@ -31,7 +31,7 @@
     <div class="col-xs-12 center-block" ng-if="c.isVoteable">
       <div ng-if="c.isVoted">
         <div ng-if="c.isThisCandidate">
-          <button class="btn btn-danger btn-lg" ng-click="deleteVote(c.id);">Kustuta hääl</button>
+          <button class="btn btn-danger btn-lg" ng-click="deleteVote();">Kustuta hääl</button>
         </div>
         <div ng-if="!c.isThisCandidate">
           <button class="btn btn-primary btn-lg" disabled>Sa oled juba valinud kandidaadi</button>

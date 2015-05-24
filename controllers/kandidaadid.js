@@ -69,7 +69,7 @@ module.exports = function(router) {
     router.get('/delete', function(req,res) {
         db.User.find({where: {ssn: res.locals.user.ssn}}).then(function(data) {
             db.Vote.destroy({where:{UserId:data.id}}).then(function() {
-                console.log('[DB] Row deleted from Vote')
+                console.log('[DB] Row deleted from Vote');
             });
         });
     });

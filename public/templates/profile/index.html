@@ -1,0 +1,25 @@
+<div class="row-fluid">
+    <legend>Sinu info</legend>
+</div>
+
+<div>
+    <p>Eesnimi: {{ data.first }}</p>
+    <p>Perenimi: {{ data.last }}</p>
+    <br>
+</div>
+
+<div ng-if="data.hasVoted">
+    <p>Sa oled hääletanud.</p>
+</div>
+
+<div ng-if="!data.hasVoted">
+    <p>Sa ei ole veel hääletanud. Soovid hääletada?</p>
+</div>
+
+<div ng-if="data.isCandidate">
+    <p>Sa oled kandidaat.</p>
+</div>
+
+<div ng-if="!data.isCandidate">
+    <p>Sa ei ole kandidaat. Soovid kandideerida?</p>
+</div>
